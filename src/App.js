@@ -42,6 +42,7 @@ import {
   Phone,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import { Analytics } from "@vercel/analytics/react";
 
 // --- DONNÉES DE LA FAQ ---
 const faqData = [
@@ -2313,6 +2314,7 @@ const App = () => {
           </div>
         </div>
       </footer>
+      <Analytics />
     </div>
   );
 };
