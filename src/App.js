@@ -454,7 +454,7 @@ const App = () => {
         </div>
 
         <div
-          className={`fixed inset-0 bg-white z-40 flex flex-col justify-center items-center space-y-8 transition-transform duration-500 md:hidden overflow-y-auto ${
+          className={`fixed h-[100dvh] bg-white z-40 flex flex-col justify-center items-center space-y-8 transition-transform duration-500 md:hidden overflow-y-auto ${
             mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
@@ -1199,7 +1199,7 @@ const App = () => {
                     tag: "LE CHOC & LA GLOIRE",
                     dest: "Guerriers souhaitant repousser leurs limites absolues.",
                     dark: true,
-                    desc: "L'arène des compétiteurs. Rigueur absolue, reality du terrain. Accès uniquement sur aptitude.",
+                    desc: "L'arène des compétiteurs. Rigueur absolue, réalité du terrain. Accès uniquement sur aptitude.",
                   },
                 ].map((item, idx) => (
                   <div
@@ -1552,7 +1552,7 @@ const App = () => {
                     convaincre.
                   </p>
                   <p>
-                    Cette reality opérationnelle s'appuie sur une quête
+                    Cette réalité opérationnelle s'appuie sur une quête
                     intellectuelle profonde : il a exploré la psychologie et la
                     psychothérapie, enchaînant les formations en{" "}
                     <strong>
@@ -1561,7 +1561,7 @@ const App = () => {
                     </strong>
                     . Sa force de frappe réside dans cette{" "}
                     <strong>vision intégrative</strong> : lier la science du
-                    cerveau à la reality du terrain business pour offrir une
+                    cerveau à la réalité du terrain business pour offrir une
                     préparation mentale d'élite.
                   </p>
                   <p>
