@@ -908,6 +908,11 @@ const App = () => {
                   <div className="space-y-10">
                     {[
                       {
+                        icon: <Eye size={24} />,
+                        title: "Décryptage Comportemental",
+                        desc: "Lire au-delà des discours et des masques, et être le maître de l'assemblée grâce aux neurosciences et à la psychologie.",
+                      },
+                      {
                         icon: <Target size={24} />,
                         title: "Décision sous Haute Pression",
                         desc: "Maintenir une clarté cognitive totale et un instinct décisif dans les environnements critiques.",
@@ -941,11 +946,6 @@ const App = () => {
                         icon: <Users size={24} />,
                         title: "Ingénierie des Talents",
                         desc: "Profilage comportemental et sécurité psychologique pour bâtir des équipes d'élite.",
-                      },
-                      {
-                        icon: <Eye size={24} />,
-                        title: "Décryptage Comportemental",
-                        desc: "Lire au-delà des discours et des masques, et être le maître de l'assemblée grâce aux neurosciences et à la psychologie.",
                       },
                     ].map((item, idx) => (
                       <div key={idx} className="flex gap-6 items-start">
