@@ -2239,8 +2239,8 @@ const App = () => {
                     de portabilité.
                   </p>
                   <p className="mt-4 font-semibold text-gold">
-                    Pour exercer vos droits : contact@amgh-elevation.com.
-                    Réponse sous 30 jours.
+                    Pour exercer vos droits : elevation@amgh.me Réponse sous 30
+                    jours.
                   </p>
                 </section>
 
