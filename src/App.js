@@ -338,7 +338,18 @@ const App = () => {
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap');
+          /* --- ZOOM GLOBAL DES POLICES (+2 crans) --- */
+          html {
+            font-size: 18px; /* Standard = 16px. 18px donne un rendu beaucoup plus lisible. */
+          }
           
+          /* Sécurité : On garde la taille normale sur téléphone pour que ça ne déborde pas */
+          @media (max-width: 768px) {
+            html {
+              font-size: 16px; 
+            }
+          }
+          /* ----------------------------------------- */
           .font-cinzel { font-family: 'Cinzel', serif; }
           .font-playfair { font-family: 'Playfair Display', serif; }
           .font-cormorant { font-family: 'Cormorant Garamond', serif; }
