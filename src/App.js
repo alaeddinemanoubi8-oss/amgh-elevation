@@ -534,7 +534,7 @@ const App = () => {
                   <span className="font-normal">ÉLÉVATION</span>
                 </h2>
 
-                <p className="font-cormorant text-lg md:text-xl text-gray-500 max-w-3xl mx-auto mt-12 mb-10 italic leading-relaxed tracking-wider">
+                <p className="font-cormorant text-lg md:text-xl text-gray-500 max-w-5xl mx-auto mt-12 mb-10 italic leading-relaxed tracking-wider md:whitespace-nowrap">
                   Un écosystème d'excellence où la stratégie, la maîtrise du
                   corps et la puissance de l'esprit convergent.
                 </p>
