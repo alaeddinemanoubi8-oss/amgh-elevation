@@ -1509,7 +1509,10 @@ const App = () => {
                   d'avancer vers les rêves sans friction, porté par une
                   structure inébranlable. Son rôle est de révéler la puissance
                   naturelle de l'individu, pour que chaque ambition devienne,
-                  avec fluidité et sérénité, une nouvelle réalité.
+                  avec fluidité et sérénité, une nouvelle réalité. Travaillant
+                  en parmanence avec des experts de leurs domaines, Alaeddine et
+                  ses confrères vous offrent un accompagnement de haute qualité
+                  via AMGH ELEVATION.
                 </blockquote>
               </div>
             </div>
@@ -2296,18 +2299,33 @@ const App = () => {
             <div>
               <h4 className="mb-6 tracking-widest">RÉSEAUX</h4>
               <div className="flex justify-center gap-8 text-gray-400 font-normal">
-                <Instagram
-                  size={20}
+                {/* INSTAGRAM */}
+                <a
+                  href="https://www.instagram.com/the.alaeddine.pro?igsh=MTY2NzZ0aXAxNGE2aA=="
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-gold cursor-pointer transition-colors"
-                />
-                <Linkedin
-                  size={20}
+                >
+                  <Instagram size={20} />
+                </a>
+
+                {/* LINKEDIN */}
+                <a
+                  href="https://www.linkedin.com/in/alaeddine-manoubi-5a709020b"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-gold cursor-pointer transition-colors"
-                />
-                <Mail
-                  size={20}
+                >
+                  <Linkedin size={20} />
+                </a>
+
+                {/* MAIL (SCROLL VERS CONTACT) */}
+                <a
+                  href="#contact"
                   className="hover:text-gold cursor-pointer transition-colors"
-                />
+                >
+                  <Mail size={20} />
+                </a>
               </div>
             </div>
           </div>
