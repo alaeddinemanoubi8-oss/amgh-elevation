@@ -2319,13 +2319,14 @@ const App = () => {
                   <Linkedin size={20} />
                 </a>
 
-                {/* MAIL (SCROLL VERS CONTACT) */}
-                <a
-                  href="#contact"
+                {/* MAIL (COMPORTEMENT IDENTIQUE AU BOUTON CONTACT) */}
+                <button
+                  onClick={() => navigateTo("contact")}
                   className="hover:text-gold cursor-pointer transition-colors"
+                  aria-label="Contact"
                 >
                   <Mail size={20} />
-                </a>
+                </button>
               </div>
             </div>
           </div>
