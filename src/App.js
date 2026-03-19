@@ -43,131 +43,135 @@ import {
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import { Analytics } from "@vercel/analytics/react";
+import CookieBanner from "./CookieBanner";
+const App = () => {
+  // --- DONNÉES DE LA FAQ ---
+  const faqData = [
+    {
+      question: "À qui s'adressent les programmes AMGH ÉLÉVATION ?",
+      answer:
+        "Nos accompagnements sont exclusivement dédiés aux dirigeants, athlètes de haut niveau, personnalités publiques et esthètes en quête d'excellence. L'accès à nos services se fait sur analyse stricte de votre profil, de votre ambition et de votre détermination.",
+    },
+    {
+      question:
+        "Quelle est la différence entre « L'Initiation » et « La Métamorphose » ?",
+      answer:
+        "« L'Initiation » est une consultation ponctuelle d'une heure permettant d'établir un premier diagnostic ou de débloquer une problématique urgente. « La Métamorphose » est une immersion pluriannuelle et sur-mesure, conçue pour une transformation structurelle, profonde et pérenne.",
+    },
+    {
+      question: "Le cabinet garantit-il la confidentialité de ses clients ?",
+      answer:
+        "Absolument. La discrétion est la clé de voûte de notre écosystème. Nous sommes soumis au secret professionnel absolu et nos infrastructures numériques sont hautement cryptées pour garantir la protection totale de votre vie privée et de vos données.",
+    },
+    {
+      question: "Où se déroulent les séances d'accompagnement ?",
+      answer:
+        "Les consultations et entraînements se tiennent principalement dans notre bureau parisien ou en immersion privatisée. Nous assurons également des déplacements à l'international pour nous adapter aux agendas complexes de nos clients (sur devis).",
+    },
+    {
+      question: "Qu'est-ce que la « House of Brain » ?",
+      answer:
+        "C'est l'architecture de votre psyché. Nous y utilisons les neurosciences, l'hypnothérapie clinique et le profilage comportemental pour débloquer vos freins invisibles, réguler votre système nerveux et forger un leadership ainsi qu'une autorité naturels.",
+    },
+    {
+      question:
+        "Faut-il être un athlète confirmé pour intégrer la « House of Sport » ?",
+      answer:
+        "Non. Nos protocoles s'adaptent à tous les niveaux, de la simple réathlétisation à la performance absolue en compétition. Notre seule exigence porte sur votre rigueur mentale et votre volonté de vous dépasser.",
+    },
+    {
+      question:
+        "En quoi consiste le « Décryptage Comportemental » pour les dirigeants ?",
+      answer:
+        "C'est une compétence d'élite. Nous vous formons à la lecture froide (Cold Reading), à l'analyse avancée du non-verbal et à la psychologie sociale. L'objectif est de vous permettre de lire au-delà des masques et de maîtriser chaque négociation ou prise de parole.",
+    },
+    {
+      question: "Quelle est la base scientifique de la « House of Health » ?",
+      answer:
+        "L'ensemble de nos protocoles de vitalité repose sur la biologie des organismes, l'optimisation neurochimique et le bio-hacking naturel. Nous agissons sur le sommeil, la nutrition de précision et la biomécanique pour bâtir une physiologie inébranlable.",
+    },
+    {
+      question:
+        "Le cabinet intervient-il auprès des entreprises et comités de direction ?",
+      answer:
+        "Oui. Nous concevons et animons des séminaires de haute intensité, des conférences, et des teambuildings stratégiques pour les grandes écoles et les entreprises, afin d'aligner l'intelligence collective et de décupler la puissance de vos équipes.",
+    },
+    {
+      question:
+        "Comment fonctionne le protocole de Neuro-Réhabilitation post-crise ?",
+      answer:
+        "C'est un accompagnement spécifique pour les personnes traversant ou sortant d'une rupture (professionnelle, physique ou personnelle). Nous utilisons la science du vivant pour accélérer la régénération neuronale et émotionnelle, afin de vous reconstruire sur des bases plus solides qu'auparavant.",
+    },
+  ];
 
-// --- DONNÉES DE LA FAQ ---
-const faqData = [
-  {
-    question: "À qui s'adressent les programmes AMGH ÉLÉVATION ?",
-    answer:
-      "Nos accompagnements sont exclusivement dédiés aux dirigeants, athlètes de haut niveau, personnalités publiques et esthètes en quête d'excellence. L'accès à nos services se fait sur analyse stricte de votre profil, de votre ambition et de votre détermination.",
-  },
-  {
-    question:
-      "Quelle est la différence entre « L'Initiation » et « La Métamorphose » ?",
-    answer:
-      "« L'Initiation » est une consultation ponctuelle d'une heure permettant d'établir un premier diagnostic ou de débloquer une problématique urgente. « La Métamorphose » est une immersion pluriannuelle et sur-mesure, conçue pour une transformation structurelle, profonde et pérenne.",
-  },
-  {
-    question: "Le cabinet garantit-il la confidentialité de ses clients ?",
-    answer:
-      "Absolument. La discrétion est la clé de voûte de notre écosystème. Nous sommes soumis au secret professionnel absolu et nos infrastructures numériques sont hautement cryptées pour garantir la protection totale de votre vie privée et de vos données.",
-  },
-  {
-    question: "Où se déroulent les séances d'accompagnement ?",
-    answer:
-      "Les consultations et entraînements se tiennent principalement dans notre bureau parisien ou en immersion privatisée. Nous assurons également des déplacements à l'international pour nous adapter aux agendas complexes de nos clients (sur devis).",
-  },
-  {
-    question: "Qu'est-ce que la « House of Brain » ?",
-    answer:
-      "C'est l'architecture de votre psyché. Nous y utilisons les neurosciences, l'hypnothérapie clinique et le profilage comportemental pour débloquer vos freins invisibles, réguler votre système nerveux et forger un leadership ainsi qu'une autorité naturels.",
-  },
-  {
-    question:
-      "Faut-il être un athlète confirmé pour intégrer la « House of Sport » ?",
-    answer:
-      "Non. Nos protocoles s'adaptent à tous les niveaux, de la simple réathlétisation à la performance absolue en compétition. Notre seule exigence porte sur votre rigueur mentale et votre volonté de vous dépasser.",
-  },
-  {
-    question:
-      "En quoi consiste le « Décryptage Comportemental » pour les dirigeants ?",
-    answer:
-      "C'est une compétence d'élite. Nous vous formons à la lecture froide (Cold Reading), à l'analyse avancée du non-verbal et à la psychologie sociale. L'objectif est de vous permettre de lire au-delà des masques et de maîtriser chaque négociation ou prise de parole.",
-  },
-  {
-    question: "Quelle est la base scientifique de la « House of Health » ?",
-    answer:
-      "L'ensemble de nos protocoles de vitalité repose sur la biologie des organismes, l'optimisation neurochimique et le bio-hacking naturel. Nous agissons sur le sommeil, la nutrition de précision et la biomécanique pour bâtir une physiologie inébranlable.",
-  },
-  {
-    question:
-      "Le cabinet intervient-il auprès des entreprises et comités de direction ?",
-    answer:
-      "Oui. Nous concevons et animons des séminaires de haute intensité, des conférences, et des teambuildings stratégiques pour les grandes écoles et les entreprises, afin d'aligner l'intelligence collective et de décupler la puissance de vos équipes.",
-  },
-  {
-    question:
-      "Comment fonctionne le protocole de Neuro-Réhabilitation post-crise ?",
-    answer:
-      "C'est un accompagnement spécifique pour les personnes traversant ou sortant d'une rupture (professionnelle, physique ou personnelle). Nous utilisons la science du vivant pour accélérer la régénération neuronale et émotionnelle, afin de vous reconstruire sur des bases plus solides qu'auparavant.",
-  },
-];
+  // --- COMPOSANT FAQ (Accordéon) ---
+  const FAQSection = () => {
+    const [openIndex, setOpenIndex] = useState(null);
 
-// --- COMPOSANT FAQ (Accordéon) ---
-const FAQSection = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+    const toggleFaq = (index) => {
+      setOpenIndex(openIndex === index ? null : index);
+    };
 
-  const toggleFaq = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
-  return (
-    <section className="py-24 px-6 bg-[#FCFCFC] border-t border-gray-100">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-cinzel text-2xl md:text-4xl tracking-widest text-[#1a1a1a] uppercase mb-4">
-            Foire Aux Questions
-          </h2>
-          <div className="w-12 h-[1px] bg-gold mx-auto mb-6"></div>
-          <p className="font-light-ui text-base md:text-lg text-gray-500 tracking-wider">
-            Les réponses à vos interrogations sur notre écosystème d'excellence.
-          </p>
-        </div>
-        <div className="space-y-2">
-          {faqData.map((faq, index) => (
-            <div key={index} className="border-b border-gray-200 last:border-0">
-              <button
-                onClick={() => toggleFaq(index)}
-                className="w-full flex justify-between items-center py-6 text-left group outline-none"
+    return (
+      <section className="py-24 px-6 bg-[#FCFCFC] border-t border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="font-cinzel text-2xl md:text-4xl tracking-widest text-[#1a1a1a] uppercase mb-4">
+              Foire Aux Questions
+            </h2>
+            <div className="w-12 h-[1px] bg-gold mx-auto mb-6"></div>
+            <p className="font-light-ui text-base md:text-lg text-gray-500 tracking-wider">
+              Les réponses à vos interrogations sur notre écosystème
+              d'excellence.
+            </p>
+          </div>
+          <div className="space-y-2">
+            {faqData.map((faq, index) => (
+              <div
+                key={index}
+                className="border-b border-gray-200 last:border-0"
               >
-                <span
-                  className={`font-cinzel text-sm md:text-base tracking-wider uppercase transition-colors pr-8 ${
+                <button
+                  onClick={() => toggleFaq(index)}
+                  className="w-full flex justify-between items-center py-6 text-left group outline-none"
+                >
+                  <span
+                    className={`font-cinzel text-sm md:text-base tracking-wider uppercase transition-colors pr-8 ${
+                      openIndex === index
+                        ? "text-gold font-bold"
+                        : "text-[#1a1a1a] group-hover:text-gold"
+                    }`}
+                  >
+                    {faq.question}
+                  </span>
+                  <ChevronDown
+                    className={`transform transition-transform duration-300 flex-shrink-0 ${
+                      openIndex === index
+                        ? "rotate-180 text-gold"
+                        : "text-gray-400 group-hover:text-gold"
+                    }`}
+                    size={20}
+                  />
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
                     openIndex === index
-                      ? "text-gold font-bold"
-                      : "text-[#1a1a1a] group-hover:text-gold"
+                      ? "max-h-[500px] opacity-100 pb-6"
+                      : "max-h-0 opacity-0"
                   }`}
                 >
-                  {faq.question}
-                </span>
-                <ChevronDown
-                  className={`transform transition-transform duration-300 flex-shrink-0 ${
-                    openIndex === index
-                      ? "rotate-180 text-gold"
-                      : "text-gray-400 group-hover:text-gold"
-                  }`}
-                  size={20}
-                />
-              </button>
-              <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  openIndex === index
-                    ? "max-h-[500px] opacity-100 pb-6"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
-                <p className="font-light-ui text-base text-gray-600 leading-relaxed tracking-wider text-justify">
-                  {faq.answer}
-                </p>
+                  <p className="font-light-ui text-base text-gray-600 leading-relaxed tracking-wider text-justify">
+                    {faq.answer}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-  );
-};
+      </section>
+    );
+  };
 
-const App = () => {
   const [currentPage, setCurrentPage] = useState("home"); // 'home', 'strategie', 'mentorat', 'vitalite', 'fondateur', 'contact', 'rgpd', 'confirmation'
   const [history, setHistory] = useState([]);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -2326,8 +2330,8 @@ const App = () => {
         </div>
       </footer>
       <Analytics />
+      <CookieBanner />
     </div>
   );
 };
-
 export default App;
