@@ -843,8 +843,8 @@ const App = () => {
                     {[
                       {
                         icon: <Flame size={24} />,
-                        title: "Reprogrammation Mentale",
-                        desc: "Hypnothérapie et gestion du stress pour débloquer les freins profonds et les croyances limitantes.",
+                        title: "Préparation Mentale : concours & compétitions",
+                        desc: "Outils avancés de neuro-performance pour forger un mental d'acier et optimiser vos résultats sous pression.",
                       },
                       {
                         icon: <ShieldCheck size={24} />,
@@ -880,6 +880,11 @@ const App = () => {
                         icon: <RefreshCw size={24} />,
                         title: "Neuro-Réhabilitation post-crise",
                         desc: "Stratégies de récupération cognitive et émotionnelle après des périodes de rupture.",
+                      },
+                      {
+                        icon: <Flame size={24} />,
+                        title: "Programmation mentale",
+                        desc: "Hypnothérapie et gestion du stress pour débloquer les freins profonds et les croyances limitantes.",
                       },
                     ].map((item, idx) => (
                       <div key={idx} className="flex gap-6 items-start">
